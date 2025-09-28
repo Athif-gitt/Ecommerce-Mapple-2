@@ -1,0 +1,46 @@
+import React, { useEffect } from "react";
+import { Routes, Route, useNavigate } from "react-router-dom";
+import AdminSidebar from "../Components/AdminSidebar";
+import AdminHeader from "../components/AdminHeader";
+import AdminProducts from "./AdminProducts";
+import AdminUsers from "./AdminUsers";
+import UserDetails from "./UserDetails";
+
+function AdminHome() {
+  const navigate = useNavigate();
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem("user"));
+    if (!user || user.email !== "admin@gmail.com") {
+      navigate("/login");
+    }
+  }, [navigate]);
+  return (
+    <div className="flex min-h-screen bg-gray-100">
+      {/* Sidebar */}
+      <AdminSidebar />
+
+      {/* Main Content */}
+      <div className="flex-1 flex flex-col">
+        {/* Header */}
+        <AdminHeader />
+
+        {/* Pages */}
+        <div className="p-6">
+          <Routes>
+            <Route path="products" element={<AdminProducts />} />
+            <Route path="users" element={<AdminUsers />} />
+            <Route path="users/:id" element={<UserDetails />} />
+            <Route
+              path="/admin-home"
+              element={
+                <h2 className="text-xl font-semibold">Welcome Admin 🎉</h2>
+              }
+            />
+          </Routes>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default AdminHome;
