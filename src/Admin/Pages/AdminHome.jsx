@@ -33,7 +33,7 @@ function AdminHome() {
             <Route
               path="/admin-home"
               element={
-                <h2 className="text-xl font-semibold">Welcome Admin 🎉</h2>
+                <h2 className="text-xl font-semibold">Welcome Admin, beeen waiting for you!!!</h2> // self coded
               }
             />
           </Routes>

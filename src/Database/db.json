@@ -242,6 +242,12 @@
       "price": 549,
       "description": "AirPods Max with high-fidelity audio and Active Noise Cancellation.",
       "image": "https://m.media-amazon.com/images/I/71QFjliR-ML._AC_UY436_FMwebp_QL65_.jpg"
+    },
+    {
+      "id": "4a12",
+      "name": "iphone 13 pro",
+      "price": "499",
+      "category": "iphone"
     }
   ],
   "cart": [
