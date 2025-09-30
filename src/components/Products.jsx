@@ -6,9 +6,6 @@ import Nav from "./Nav";
 function Products() {
   const [products, setProducts] = useState([]);
   const navigate = useNavigate();
-  const handleCardClick = () => {
-    navigate('/product-details')
-  }
 
   useEffect(() => {
     axios
@@ -16,6 +13,10 @@ function Products() {
       .then((res) => setProducts(res.data))
       .catch((err) => console.error(err));
   }, []);
+
+  const handleCardClick = (item) => {
+    navigate("/product-details", { state: item });
+  };
 
   const handleAddToCart = async (item) => {
     const user = JSON.parse(localStorage.getItem("user"));
@@ -36,8 +37,7 @@ function Products() {
 
     try {
       const res = await axios.patch(`http://localhost:3010/users/${user.id}`, { cart });
-      console.log("Cart updated:", res.data);
-      localStorage.setItem("user", JSON.stringify(res.data)); 
+      localStorage.setItem("user", JSON.stringify(res.data));
       navigate("/cart");
     } catch (err) {
       console.error("Error updating cart:", err);
@@ -48,6 +48,7 @@ function Products() {
   return (
     <div className="p-0 bg-gray-50 min-h-screen">
       <Nav />
+
       <div className="flex gap-3 mt-3 px-6">
         <button
           onClick={() => navigate("/iphone")}
@@ -73,11 +74,12 @@ function Products() {
         All Products
       </h1>
 
-      <div onClick={handleCardClick} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-6">
         {products.map((item) => (
           <div
             key={item.id}
-            className="bg-white rounded-xl shadow-md hover:shadow-lg transition p-4"
+            onClick={() => handleCardClick(item)}
+            className="bg-white rounded-xl shadow-md hover:shadow-lg transition p-4 cursor-pointer"
           >
             <img
               src={item.image}
@@ -88,7 +90,10 @@ function Products() {
             <p className="text-gray-500 text-sm">{item.description}</p>
             <p className="text-blue-600 font-bold mt-2">${item.price}</p>
             <button
-              onClick={() => handleAddToCart(item)}
+              onClick={(e) => {
+                e.stopPropagation(); // Prevent card click
+                handleAddToCart(item);
+              }}
               className="mt-3 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 w-full"
             >
               Add to Cart

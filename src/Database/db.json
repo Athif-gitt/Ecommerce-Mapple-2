@@ -7,13 +7,42 @@
       "password": "athif123",
       "cart": [
         {
-          "id": "1",
-          "name": "iPhone 17 Pro",
+          "id": "7",
+          "name": "MacBook Pro 16” (M3 Pro)",
+          "category": "MacBook",
+          "price": 2499,
+          "description": "MacBook Pro 16-inch with M3 Pro chip, Liquid Retina XDR display.",
+          "image": "https://media-ik.croma.com/prod/https://media.tatacroma.com/Croma%20Assets/Computers%20Peripherals/Laptop/Images/302728_xuqn9z.png?tr=w-1000",
+          "quantity": 1
+        },
+        {
+          "id": "2",
+          "name": "iPhone 16e",
           "category": "iPhone",
-          "price": 1299,
-          "description": "The latest iPhone 17 Pro with A19 Bionic chip and Dynamic Island.",
-          "image": "https://cdn.tmobile.com/content/dam/t-mobile/en-p/cell-phones/apple/Apple-iPhone-17-Pro/Cosmic-Orange/Apple-iPhone-17-Pro-Cosmic-Orange-thumbnail_v1.png",
-          "quantity": 13
+          "price": 899,
+          "description": "iPhone 16e with A17 Bionic chip and Dynamic Island.",
+          "image": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-compare-iphone-16e-202509_FMT_WHH?wid=248&hei=324&fmt=jpeg&qlt=90",
+          "quantity": 1
+        }
+      ],
+      "purchase": [
+        {
+          "id": "7",
+          "name": "MacBook Pro 16” (M3 Pro)",
+          "category": "MacBook",
+          "price": 2499,
+          "description": "MacBook Pro 16-inch with M3 Pro chip, Liquid Retina XDR display.",
+          "image": "https://media-ik.croma.com/prod/https://media.tatacroma.com/Croma%20Assets/Computers%20Peripherals/Laptop/Images/302728_xuqn9z.png?tr=w-1000",
+          "quantity": 1
+        },
+        {
+          "id": "2",
+          "name": "iPhone 16e",
+          "category": "iPhone",
+          "price": 899,
+          "description": "iPhone 16e with A17 Bionic chip and Dynamic Island.",
+          "image": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-compare-iphone-16e-202509_FMT_WHH?wid=248&hei=324&fmt=jpeg&qlt=90",
+          "quantity": 1
         }
       ]
     },
@@ -31,7 +60,36 @@
           "price": 799,
           "description": "iPhone 15 with A16 Bionic chip and all-day battery life.",
           "image": "https://m.media-amazon.com/images/I/71d7rfSl0wL._SL1500_.jpg",
-          "quantity": 3
+          "quantity": 1
+        },
+        {
+          "id": "1",
+          "name": "iPhone 17 Pro",
+          "category": "iPhone",
+          "price": 1299,
+          "description": "The latest iPhone 17 Pro with A19 Bionic chip and Dynamic Island.",
+          "image": "https://cdn.tmobile.com/content/dam/t-mobile/en-p/cell-phones/apple/Apple-iPhone-17-Pro/Cosmic-Orange/Apple-iPhone-17-Pro-Cosmic-Orange-thumbnail_v1.png",
+          "quantity": 2
+        }
+      ],
+      "purchase": [
+        {
+          "id": "3",
+          "name": "iPhone 15",
+          "category": "iPhone",
+          "price": 799,
+          "description": "iPhone 15 with A16 Bionic chip and all-day battery life.",
+          "image": "https://m.media-amazon.com/images/I/71d7rfSl0wL._SL1500_.jpg",
+          "quantity": 1
+        },
+        {
+          "id": "1",
+          "name": "iPhone 17 Pro",
+          "category": "iPhone",
+          "price": 1299,
+          "description": "The latest iPhone 17 Pro with A19 Bionic chip and Dynamic Island.",
+          "image": "https://cdn.tmobile.com/content/dam/t-mobile/en-p/cell-phones/apple/Apple-iPhone-17-Pro/Cosmic-Orange/Apple-iPhone-17-Pro-Cosmic-Orange-thumbnail_v1.png",
+          "quantity": 2
         }
       ]
     },
@@ -49,6 +107,35 @@
           "price": 1299,
           "description": "The latest iPhone 17 Pro with A19 Bionic chip and Dynamic Island.",
           "image": "https://cdn.tmobile.com/content/dam/t-mobile/en-p/cell-phones/apple/Apple-iPhone-17-Pro/Cosmic-Orange/Apple-iPhone-17-Pro-Cosmic-Orange-thumbnail_v1.png",
+          "quantity": 1
+        },
+        {
+          "id": "7",
+          "name": "MacBook Pro 16” (M3 Pro)",
+          "category": "MacBook",
+          "price": 2499,
+          "description": "MacBook Pro 16-inch with M3 Pro chip, Liquid Retina XDR display.",
+          "image": "https://media-ik.croma.com/prod/https://media.tatacroma.com/Croma%20Assets/Computers%20Peripherals/Laptop/Images/302728_xuqn9z.png?tr=w-1000",
+          "quantity": 1
+        }
+      ],
+      "purchase": [
+        {
+          "id": "1",
+          "name": "iPhone 17 Pro",
+          "category": "iPhone",
+          "price": 1299,
+          "description": "The latest iPhone 17 Pro with A19 Bionic chip and Dynamic Island.",
+          "image": "https://cdn.tmobile.com/content/dam/t-mobile/en-p/cell-phones/apple/Apple-iPhone-17-Pro/Cosmic-Orange/Apple-iPhone-17-Pro-Cosmic-Orange-thumbnail_v1.png",
+          "quantity": 1
+        },
+        {
+          "id": "7",
+          "name": "MacBook Pro 16” (M3 Pro)",
+          "category": "MacBook",
+          "price": 2499,
+          "description": "MacBook Pro 16-inch with M3 Pro chip, Liquid Retina XDR display.",
+          "image": "https://media-ik.croma.com/prod/https://media.tatacroma.com/Croma%20Assets/Computers%20Peripherals/Laptop/Images/302728_xuqn9z.png?tr=w-1000",
           "quantity": 1
         }
       ]
@@ -268,10 +355,10 @@
       "category": "iphone"
     },
     {
-      "id": "2bcc",
-      "name": "iphone 1",
-      "price": "99",
-      "category": "iphone"
+      "id": "d785",
+      "name": "MacBook M5",
+      "price": "2000",
+      "category": "macbook"
     }
   ],
   "cart": [

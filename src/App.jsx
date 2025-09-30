@@ -13,6 +13,7 @@ import ProductDetails from "./components/ProductDetails";
 import AdminHome from "./Admin/Pages/AdminHome"
 import Payment from "./components/Payment";
 import Confirmation from "./components/Confirmation";
+import Orders from "./components/Orders";
 
 function App() {
   return (
@@ -28,7 +29,9 @@ function App() {
         <Route path="/earpod" element={<AirPod />}></Route>
         <Route path="/payment" element={<Payment />}></Route>
         <Route path="/payment" element={<Payment />}></Route>
+        <Route path="/orders" element={<Orders />}></Route>
         <Route path="/confirmation" element={<Confirmation />}></Route>
+         <Route path="/product-details" element={<ProductDetails />} />
         <Route path="/admin-home/*" element={<AdminHome />} />
       </Routes>
       <Footer />

@@ -18,34 +18,39 @@ export default function Payment() {
   };
 
   const handleSubmit = async (e) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  const validationErrors = validate();
-  if (Object.keys(validationErrors).length > 0) {
-    setError(validationErrors);
-    return;
-  }
-
-  try {
-    const loggedUser = JSON.parse(localStorage.getItem("user"));
-    if (!loggedUser) {
-      alert("No user found!");
+    const validationErrors = validate();
+    if (Object.keys(validationErrors).length > 0) {
+      setError(validationErrors);
       return;
     }
 
-    const res = await axios.get(`http://localhost:3010/users/${loggedUser.id}`);
-    const userData = res.data;
+    try {
+      const loggedUser = JSON.parse(localStorage.getItem("user"));
+      if (!loggedUser) {
+        alert("No user found!");
+        return;
+      }
 
-    navigate('/confirmation', {state: {order: userData.cart}})
+      const res = await axios.get(
+        `http://localhost:3010/users/${loggedUser.id}`
+      );
+      const userData = res.data;
+      const resPatch = await axios.patch(
+        `http://localhost:3010/users/${userData.id}`,
+        { purchase: userData.cart }
+      );
+      console.log(resPatch.data); 
 
-    // console.log("User data:", userData);
-    // console.log("Cart items:", userData.cart);
+      navigate("/confirmation", { state: { order: userData.cart } });
 
-  } catch (err) {
-    console.error("Failed to fetch user:", err);
-  }
-};
-
+      // console.log("User data:", userData);
+      // console.log("Cart items:", userData.cart);
+    } catch (err) {
+      console.error("Failed to fetch user:", err);
+    }
+  };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
@@ -68,7 +73,9 @@ export default function Payment() {
             className="w-full mt-1 p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
           />
           {error.cardNumberError && (
-            <p className="text-red-500 text-sm mt-1">*{error.cardNumberError}</p>
+            <p className="text-red-500 text-sm mt-1">
+              *{error.cardNumberError}
+            </p>
           )}
         </div>
 

@@ -1,8 +1,12 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export default function Confirmation() {
   const location = useLocation();
   const { order } = location.state || { order: [] };
+  const navigate = useNavigate()
+  const handleNavClick = () => {
+    navigate('/orders')
+  }
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100">
@@ -30,6 +34,10 @@ export default function Confirmation() {
           <p className="text-red-500 text-center">No items found.</p>
         )}
       </div>
+      <button className="w-auto bg-green-500 text-white py-2 rounded-lg hover:bg-green-600 mt-5 p-5 cursor-pointer"
+        onClick={handleNavClick}>
+        Track Order
+      </button>
     </div>
   );
 }

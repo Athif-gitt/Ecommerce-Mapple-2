@@ -48,6 +48,10 @@ function Nav() {
               </span>
             </Link>
           </li>
+          <li className="hover:text-blue-600 cursor-pointer relative">
+            <Link to={"/orders"}>Orders</Link>
+          </li>
+
           {loggedIn ? (
             <li
               className="hover:text-blue-600 cursor-pointer"
