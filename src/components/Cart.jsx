@@ -1,10 +1,15 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Nav from "./Nav";
+import { useNavigate } from "react-router-dom";
 
 function Cart() {
+  const navigate = useNavigate()
   const [cartItems, setCartItems] = useState([]);
   const [user, setUser] = useState(null);
+  const handlePurchase = () => {
+    navigate('/payment')
+  }
 
   useEffect(() => {
     const loggedUser = JSON.parse(localStorage.getItem("user"));
@@ -100,6 +105,9 @@ function Cart() {
           <h2 className="text-2xl font-bold mt-4 text-gray-800">
             Total: ${total}
           </h2>
+          <button onClick={handlePurchase} className="bg-green-700 text-white px-6 py-2 rounded-lg hover:bg-green-600 cursor-pointer">
+            Purchase
+          </button>
         </div>
       ) : (
         <p className="text-gray-600">Your cart is empty.</p>

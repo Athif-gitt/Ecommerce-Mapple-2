@@ -18,7 +18,7 @@ function UserDetails() {
     <div className="bg-white shadow p-4 rounded">
       <h2 className="text-2xl font-bold mb-3">{user.name}</h2>
       <p>Email: {user.email}</p>
-      <p>Orders: Hardcoded Example - iPhone 15, MacBook Air</p>
+      <p>Orders: iPhone 15, MacBook Air</p>
     </div>
   );
 }
